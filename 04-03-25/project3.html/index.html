@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            position: relative;
+        }
+        .menu-btn {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+        .menu-dropdown {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 60px;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 200px;
+            padding: 10px;
+        }
+        .menu-dropdown button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #ff5722;
+            color: white;
+            cursor: pointer;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .menu-dropdown button:hover {
+            background: #e64a19;
+        }
+        .food-list {
+            display: none;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            text-align: left;
+        }
+        .food-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .food-list ul li {
+            padding: 5px 0;
+        }
+        .images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+        }
+        .images img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px;
+            margin-top: 30px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+        .social-icons a {
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ReshYUM</h1>
+        <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+    </header>
+
+    <div class="menu-dropdown" id="menuDropdown">
+        <button onclick="toggleFoodList('continental')">Continental</button>
+        <div class="food-list" id="continental">
+            <ul>
+                <li>Pasta Alfredo</li>
+                <li>Grilled Salmon</li>
+                <li>Caesar Salad</li>
+            </ul>
+        </div>
+        <button onclick="toggleFoodList('indian')">Indian</button>
+        <div class="food-list" id="indian">
+            <ul>
+                <li>Butter Chicken</li>
+                <li>Paneer Tikka</li>
+                <li>Biryani</li>
+            </ul>
+        </div>
+        <button onclick="toggleFoodList('special')">Special Items</button>
+        <div class="food-list" id="special">
+            <ul>
+                <li>Chef's Signature Dish</li>
+                <li>Secret Recipe Dessert</li>
+                <li>House Special Mocktail</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="images">
+        <img src="img2.webp" alt="Restaurant Ambience">
+        <img src="img1.jpg" alt="Restaurant Dining">
+        <img src="img3.webp" alt="Restaurant food">
+    </div>
+
+    <footer>
+        <p>Contact: +91 98765 43210 | Email: restaurant@example.com</p>
+        <div class="social-icons">
+            <a href="#" target="_blank">📞</a>
+            <a href="#" target="_blank">📧</a>
+            <a href="#" target="_blank">📱</a>
+            <a href="#" target="_blank">📸</a>
+            <a href="#" target="_blank">📘</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menuDropdown");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+
+        function toggleFoodList(id) {
+            var foodList = document.getElementById(id);
+            foodList.style.display = foodList.style.display === "block" ? "none" : "block";
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
