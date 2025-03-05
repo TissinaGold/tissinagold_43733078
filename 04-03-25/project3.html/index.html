@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEOLIA COOKS</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff3e6;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            display: flex;
+            justify-content: center; /* Centers the title */
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #ff6f61;
+            color: white;
+            position: relative;
+        }
+        .menu-icon {
+            position: absolute;
+            right: 30px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .menu-dropdown {
+            display: none;
+            position: absolute;
+            right: 30px;
+            top: 60px;
+            background-color: #698b3c;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            text-align: left;
+        }
+        .menu-dropdown ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .menu-dropdown li {
+            padding: 10px;
+            border-bottom: 1px solid #b61818;
+        }
+        .menu-dropdown li:last-child {
+            border-bottom: none;
+        }
+        .menu-dropdown li:hover {
+            background-color: #df9f52;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+        .hero-content {
+            max-width: 60%;
+            text-align: center;
+        }
+        .hero img {
+            max-width: 400px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .explore-btn {
+            background-color: #ff6f61;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .explore-btn:hover {
+            background-color: #e65c50;
+        }
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .feature {
+            background: #ffcc99;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+        }
+        .feature img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+        footer {
+            background-color: #fde4cf;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .footer-content div {
+            margin: 10px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 24px;
+            color: black;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("menuDropdown");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+        function scrollToFeatures() {
+            document.getElementById("features").scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>TEOLIA COOKS</h1>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div id="menuDropdown" class="menu-dropdown">
+            <ul>
+                <li><strong>Indian</strong>: Biryani, Paneer Butter Masala</li>
+                <li><strong>Chinese</strong>: Fried Rice, Manchurian</li>
+                <li><strong>Italian</strong>: Pasta, Pizza</li>
+                <li><strong>Desserts</strong>: Ice Cream, Brownies</li>
+            </ul>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <h2 style="font-size: 40px; font-weight: bold;">Enjoy Your Delicious Food</h2>
+            <p>Embrace a new era of food experience at TEOLIA COOKS, where we redefine flavors for the modern world.</p>
+            <button class="explore-btn" onclick="scrollToFeatures()">Explore Now</button>
+        </div>
+        <img src="img3.webp" alt="Delicious Food Bowl">
+    </section>
+    
+    <section id="features" class="features">
+        <div class="feature">
+            <img src="discount.jpg" alt="Discount">
+            <h3>Discount Voucher</h3>
+            <p>Get exciting discount vouchers on your favorite meals.</p>
+        </div>
+        <div class="feature">
+            <img src="fresh.jpeg" alt="Healthy Food">
+            <h3>Fresh Healthy Food</h3>
+            <p>We serve freshly prepared meals with the best ingredients.</p>
+        </div>
+        <div class="feature">
+            <img src="delivery.jpg" alt="Fast Delivery">
+            <h3>Fast Home Delivery</h3>
+            <p>Enjoy fast and reliable home delivery of your orders.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h2>TEOLIA COOKS</h2>
+            </div>
+            <div>
+                <h3>Main Links</h3>
+                <p>Order Tracking</p>
+                <p>New Order</p>
+                <p>Contact Us</p>
+                <p>News & Blogs</p>
+            </div>
+            <div>
+                <h3>Support</h3>
+                <p>About Us</p>
+                <p>Privacy Policy</p>
+                <p>Terms & Conditions</p>
+            </div>
+            <div>
+                <h3>Subscribe</h3>
+                <input type="text" placeholder="Enter your Email..." style="padding: 5px;">
+            </div>
+            <div class="social-icons">
+                <h3>Follow Us</h3>
+                <a href="#">📘</a>
+                <a href="#">🐦</a>
+                <a href="#">📷</a>
+                <a href="#">▶️</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
