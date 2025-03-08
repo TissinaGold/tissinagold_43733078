@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <title>Counter</title>
+</head>
+<style>
+  button{
+    background-color: #cfe9ff;
+    border-radius: 100px;
+    size: 300px;
+    padding:50px;
+  }
+
+  .display {      
+            font-size: 2rem;
+            padding: 100px;
+            border-radius: 100px;
+            background: rgb(159, 243, 165);
+            text-align: center;
+            width: 7.5px;
+            margin: -10px -10px -20px -10px; 
+
+        }
+    .display1 { 
+        font-size: 2rem;
+        padding: 30px;
+        border-radius: 100px;
+        background: rgb(217, 245, 141);
+        text-align: center;
+        width: 100px;
+        margin: -400px 50px 0px  50px; 
+
+        }
+    .reset{
+        padding: 5px;
+        background: #f3d9eb;
+        text-align: center;
+        width: 150px;
+        margin-top: -90px;
+        border-radius: 0px;
+        width: 50px;
+    }
+    h2{
+        background-color: rgb(255, 205, 248);
+        width: 100px;
+        border-radius: 30px;
+    }
+</style>
+<body>
+    <div>
+    <center>
+    <h2>Counter</h2>
+    <div>
+        <div><p id="buttons" class="display">0</p></div> 
+        <button onclick="add()" class="display1">+1</button>
+        <button onclick="sub()" class="display1">-1</button><br>
+       <button onclick="reset()" class="reset" >Reset</button></center>
+    </div>
+</div>
+    <script>
+        count =0
+        function add(){
+            count=count+1
+            render()
+        } 
+        function sub(){
+            count=count-1
+            render()
+        }
+        function reset(){
+            count=0
+            render()
+        }
+        function render(){
+            document.getElementById('buttons').innerHTML=count
+        }
+        document.getElementById('buttons').innerHTML=count
+    </script>
+</body>
