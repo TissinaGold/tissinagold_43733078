@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Montserrat Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Food Delivery App</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            font-family: "Montserrat", sans-serif;
+        }
+        .navbar {
+            width: 100%;
+            height: 50px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #bd60603d;
+            border: 1px solid #121212;
+        }
+        .nav-brand {
+            height: 80%;
+            padding: 0px 10px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center;
+            color:#6d0808;
+
+        }
+        .nav-info {
+            height: 80%;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            
+        }
+        .nav-info > a {
+            padding: 5px 10px;
+            margin: 3px;
+            text-decoration: none;
+            color: #6d0808;
+        }
+        .nav-signup {
+            height: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .nav-signup > img , .nav-signup > button {
+            margin: 10px;
+        }
+        .btn-signup {
+            background-color: #12121200;
+            padding: 5px 15px;
+            border: 1px solid #121212;
+            border-radius: 10px;
+            color:#6d0808;
+        }
+        .poster {
+            width: 80%;
+            height: 300px;
+            margin: 40px 120px;
+            border-radius: 20px;
+        }
+        .poster-info {
+            width: 100%;
+            height: 300px;
+            border-radius: 20px;
+
+            background-color: seagreen;
+            margin-top: -304px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .poster-info > h2 , .poster-info > p {
+            width: 50%;
+            text-align: center;
+        }
+        .explore{
+            width:80%;
+            margin: 120px;
+            display : flex;
+            margin-bottom: 90px;
+            flex-direction: column;
+            justify-content: space-around;
+            border-bottom: 1.5px solid black;
+        }
+        .explore-items{
+            width: 90;
+            height: 190px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            overflow-y:hidden;          
+            padding: 10px 0;  
+        }
+        .food-item{
+            width: 200px;
+            height:100% ;
+            margin-right: 20px ;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        @media only screen and (max-width:600px) 
+        {
+            body{
+                background-color: rgb(250, 255, 186);
+            }
+            .nav-info , .poster-info > p{
+                display: none;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-brand">
+            <p>Brand</p>
+        </div>
+        <div class="nav-info">
+            <a href="/">Home</a>
+            <a href="/">Menu</a>
+            <a href="/">Contact us</a>
+        </div>
+        <div class="nav-signup">
+            <img src="./assets/icons8-cart-48.png"/>
+            <button class="btn-signup">Sign up</button>
+        </div>
+    </div>
+    <div class="poster">
+        <img src="./assets/background.jpg" style="object-fit: cover; width: 100%; height: 100%; border-radius: 20px;"/>
+        <div class="poster-info">
+            <h2>Order your favorite food here</h2>
+            <p>Choose from a diverse menu featuring a delectable array of dishes crafted with the finest ingredients and culinary expertise.</p>
+            <button class="btn-signup" style="background-color: #ffffff;">View Menu</button>
+        </div>
+    </div>
+    <div class="explore">
+        <h2>Explore our menu</h2>
+        <p>Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
+        <div class="explore-items">
+            <div class="food-item">
+                <img src="./assets/c4.webp"/>
+                <p>Salad</p>
+            </div>
+            <div class="food-item">
+                <img src="./assets/c4.webp">
+                <p>Salad</p>
+            </div>
+            <div class="food-item">
+                <img src="./assets/c4.webp">
+                <p>Salad</p>
+            </div>
+            <div class="food-item">
+                <img src="./assets/c4.webp">
+                <p>Salad</p>
+            </div>
+            <div class="food-item">
+                <img src="./assets/c4.webp">
+                <p>Salad</p>
+            </div>
+            <div class="food-item">
+                <img src="./assets/c4.webp">
+                <p>Salad</p>
+            </div>
+            <div class="food-item">
+                <img src="./assets/c4.webp">
+                <p>Salad</p>
+            </div>
+            <div class="food-item">
+                <img src="./assets/c4.webp">
+                <p>Salad</p>
+            </div>
+
+    </div>
+
+</body>
+</html>
