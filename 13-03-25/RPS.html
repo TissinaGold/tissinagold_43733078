@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        .choices button {
+            background: none;
+            border-color: lightpink;
+            font-size: 50px;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 50%;
+        }
+        .choices button:hover {
+            background-color: white
+            
+        }
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            text-align: center;
+            border: 1px solid lightpink;
+            
+        }
+        th {
+            border: 1px solid lightpink;
+            padding: 5px 15px;
+            font-size: 18px;
+        }
+        td{
+            border: 1px solid lightpink;
+            padding: 30px 20px;
+            font-size: 18px;
+    
+        }
+        .score-table {
+            width: 500px;
+            border: 1px solid lightpink;
+        }
+        .score-table td {
+            border: 1px solid lightpink;
+            padding: 5px 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <div class="choices">
+        <button onclick="play('rock')"><img src="assets/rock.jpg" style="height: 40px; width: 40px; border-radius: 50%; background-color: white;"></button>
+        <button onclick="play('paper')"><img src="assets/pap.jpg" style="height: 40px; width: 40px; border-radius: 50%; background-color: white;"></button>
+        <button onclick="play('scissors')"><img src="assets/sci.jpg" style="height: 40px; width: 40px; border-radius: 50%; background-color: white;"></button>
+    </div>
+    
+    <h2 id="result">-</h2>
+
+    <table>
+        <tr>
+            <th>You</th>
+            <th>Computer</th>
+        </tr>
+        <tr>
+            <td id="player-choice"> <img src="assets/pap.jpg" style="height: 40px; width: 40px; border-radius: 50%; background-color: white;"></td>
+            <td id="computer-choice"><img src="assets/sci.jpg" style="height: 40px; width: 40px; border-radius: 50%; background-color: white;"></td>
+        </tr>
+    </table>
+
+    
+    <table class="score-table">
+        <tr>
+            <td>Wins: <span id="wins">0</span></td>
+            <td>Loses: <span id="loses">0</span></td>
+            <td>Ties: <span id="ties">0</span></td>
+        </tr>
+    </table>
+
+    <button class="reset" onclick="resetGame()">Reset</button>
+
+    <script>
+        let wins = 0, loses = 0, ties = 0, rounds = 0;
+
+        function play(playerChoice) {
+            if (rounds >= 5) {
+                return;
+            }
+
+            const choices = ['rock', 'paper', 'scissors'];
+            const computerChoice = choices[Math.floor(Math.random() * 3)];
+            
+            document.getElementById("player-choice").innerHTML = getEmoji(playerChoice);
+            document.getElementById("computer-choice").innerHTML = getEmoji(computerChoice);
+            
+            let result = "";
+            if (playerChoice === computerChoice) {
+                result = "It's a tie!";
+                ties++;
+            } else if (
+                (playerChoice === 'rock' && computerChoice === 'scissors') ||
+                (playerChoice === 'paper' && computerChoice === 'rock') ||
+                (playerChoice === 'scissors' && computerChoice === 'paper')
+            ) {
+                result = "You win!";
+                wins++;
+            } else {
+                result = "You lose!";
+                loses++;
+            }
+
+            rounds++;
+            document.getElementById("result").innerText = result;
+            document.getElementById("wins").innerText = wins;
+            document.getElementById("loses").innerText = loses;
+            document.getElementById("ties").innerText = ties;
+
+            if (rounds === 5) {
+                setTimeout(() => {
+                    let finalMessage = getFinalResult();
+                    alert(finalMessage); 
+                    resetGame();
+                }, 300);
+            }
+
+        }
+        function getEmoji(choice) {
+            return choice === 'rock' ? '✊' : choice === 'paper' ? '✋' : '✌️';
+        }
+        function getFinalResult() {
+            if (wins > loses) {
+                return " You won !";
+            } else if (wins < loses) {
+                return "You lost ! ";
+            } else {
+                return "It's a tie! ";
+            }
+        }
+
+        function resetGame() {
+            wins = 0; loses = 0; ties = 0; rounds = 0;
+            document.getElementById("wins").innerText = wins;
+            document.getElementById("loses").innerText = loses;
+            document.getElementById("ties").innerText = ties;
+            document.getElementById("result").innerText = "-";
+            document.getElementById("player-choice").innerText = "✋";
+            document.getElementById("computer-choice").innerText = "✌️";
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
