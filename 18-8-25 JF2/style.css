@@ -1,0 +1,66 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fff8e7;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+input {
+  border: 2px solid orange;
+}
+
+button {
+  background: linear-gradient(to right, yellow, orange);
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+table th, table td {
+  border: 2px solid orange;
+  padding: 10px;
+  text-align: center;
+}
+
+#removeBtn {
+  width: 100%;
+  margin-top: 10px;
+}
+
